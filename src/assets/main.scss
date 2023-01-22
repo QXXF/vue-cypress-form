@@ -1,0 +1,12 @@
+@import "@picocss/pico";
+/* Picocss per la normalizzazione css + responsive super semplice out of the box */
+
+.error-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    small {
+        color: var(--del-color);
+    }
+}
