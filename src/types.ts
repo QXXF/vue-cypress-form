@@ -1,3 +1,5 @@
+import type { Component } from "vue"
+
 export interface ActiveStep {
     id: number
 }
@@ -16,11 +18,12 @@ export interface FormStep {
 export interface Input {
     id: number
     label: string,
-    type: string,
+    type: any,
     model: any | null,
     set?: any[],
-    val?: void[],
-    errors?: boolean
+    errors?: boolean,
+    placeholder?: string,
+    val?: ((input: string) => string | false)[]
 }
 
 export enum inputTypes {

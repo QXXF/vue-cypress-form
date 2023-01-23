@@ -24,6 +24,7 @@
     const validate = (e: any) => {
         const input = e.target.value
         errors.value = updateFormState( model?.id, model?.val, input )
+        // Se l'input è sporco, assegna l'aria relativa alla validazione
         ariaError = dirty ? errors.value.length ? true : false : undefined
     }
 
@@ -34,6 +35,7 @@
         {{ model?.label }}
         <!-- :model=model?.model -->
         <select 
+            :id=model?.label
             :name=model?.label
             :aria-invalid=ariaError
             autocomplete="nope"
@@ -42,11 +44,11 @@
         >
             <option value selected>{{ model?.placeholder }}</option>
             <option 
-                v-for="option of model?.set"
-                :value=option.id
-                :selected="option.id == model?.model"
+                v-for="{id, label} of model?.set"
+                :value=id
+                :selected="id == model?.model"
             >
-                {{option.label}}
+                {{label}}
             </option>
         </select>
 

@@ -36,9 +36,7 @@
         <article>
             <h2>{{af?.title}}</h2>
             <FormAssembler :inputs=af?.inputs />
-            <FormAssemblerFooter
-                :form=form
-            />
+            <FormAssemblerFooter :form=form />
         </article>
     </div>
 </template>

@@ -14,6 +14,7 @@ export const config = {
     errMsg: errors
 }
 
+// Lista di tutte le validazioni possibili
 export const validators = {
     REQ: (input: string | any[]) => !input.length ? config.errMsg.required : false ,
     MXLEN: (input: string | any[]) => input.length > config.maxlen ? config.errMsg.maxLen : false ,
@@ -22,6 +23,14 @@ export const validators = {
     MAIL: (input: string ) => !config.mailRe.test(input) ? config.errMsg.notEmail : false 
 }
 
+/**
+ * Applica il set di validatori (presenti nel model dell'input) al value inserito
+ *
+ * @param value - Il valore inserito dall'utente nell'input
+ * @param validators - La lista di validatori
+ * @returns Ritorna una lista di errori possibili, oppure 
+ * un array vuoto nel caso l'input sia valido
+ */
 export const checkInputValidity = (value: any, validators: any): any[] => {
     return validators
         .map( (validator: any) => validator(value) )

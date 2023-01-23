@@ -24,6 +24,7 @@
     const validate = (e: any) => {
         const input = e.target.value.trim()
         errors.value = updateFormState( model?.id, model?.val, input )
+        // Se l'input è sporco, assegna l'aria relativa alla validazione
         ariaError = dirty ? errors.value.length ? true : false : undefined
     }
 
@@ -33,6 +34,7 @@
     <label :for=model?.label>
         {{ model?.label }}
         <input type="text"
+            :id=model?.label
             :name=model?.label
             :placeholder=model?.placeholder
             :value=model?.model

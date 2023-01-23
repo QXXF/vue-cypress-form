@@ -14,8 +14,8 @@
 
 <template>
     <div v-for="model in inputs" >
-        <TextInput v-if="model.type == inputTypes.TEXT" :model="model" />
-        <MailInput v-if="model.type == inputTypes.MAIL" :model="model" />
-        <SelectField v-if="model.type == inputTypes.SELECT" :model="model" />
+        <TextInput v-if="model.type == inputTypes.TEXT" :key="model.id" :model="model" />
+        <MailInput v-if="model.type == inputTypes.MAIL" :key="model.id" :model="model" />
+        <SelectField v-if="model.type == inputTypes.SELECT" :key="model.id" :model="model" />
     </div>
 </template>
