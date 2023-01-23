@@ -38,22 +38,22 @@
 <template>
     <!-- // Primo step -->
     <footer v-if="rs.stepid == 1" >
-        <button v-if="!valid" class="outline secondary not-ready"> Continua </button>
-        <button v-if="valid" class="primary" @click=nextStep > Continua </button>
+        <button id="next" v-if="!valid" class="outline secondary not-ready"> Continua </button>
+        <button id="next" v-if="valid" class="primary" @click=nextStep > Continua </button>
     </footer>
 
     <!-- // Steps intermedi -->
     <footer v-if="rs.stepid > 1 && rs.stepid < form?.steps.length" >
-        <button class="outline secondary" @click=prevStep > Indietro </button>
-        <button v-if="!valid" class="outline secondary not-ready"> Continua </button>
-        <button v-if="valid" class="primary" @click=nextStep > Continua </button>
+        <button id="back" class="outline secondary" @click=prevStep > Indietro </button>
+        <button id="next" v-if="!valid" class="outline secondary not-ready"> Continua </button>
+        <button id="next" v-if="valid" class="primary" @click=nextStep > Continua </button>
     </footer>
 
     <!-- // Ultimo step -->
     <footer v-if="rs.stepid == form?.steps.length" >
-        <button class="outline secondary" @click=prevStep > Indietro </button>
-        <button v-if="!valid" class="outline secondary not-ready"> Invia </button>
-        <button v-if="valid" class="primary" @click=logres > Invia </button>
+        <button id="back" class="outline secondary" @click=prevStep > Indietro </button>
+        <button id="submit" v-if="!valid" class="outline secondary not-ready"> Invia </button>
+        <button id="submit" v-if="valid" class="primary" @click=logres > Invia </button>
     </footer>
 </template>
 
