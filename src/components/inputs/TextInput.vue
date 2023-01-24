@@ -3,7 +3,7 @@
     import { updateFormState } from '@/helpers';
     import { ref, type Ref } from 'vue';
 
-    // #Lifecycle
+    // #Props
     let { model } = defineProps({
         model: Object
     })
@@ -12,9 +12,7 @@
     let errors: Ref<any[]> = ref([])
     let ariaError: boolean | undefined
 
-    const handleInput = (e: any) => {
-        validate(e)
-    }
+    const handleInput = (e: any) => validate(e)
 
     const handleBlur = (e: any) => {
         if ( !dirty ) dirty = true
@@ -23,6 +21,7 @@
 
     const validate = (e: any) => {
         const input = e.target.value.trim()
+        // Esegue la validazione e assegna il value inserito al model del form
         errors.value = updateFormState( model?.id, model?.val, input )
         // Se l'input è sporco, assegna l'aria relativa alla validazione
         ariaError = dirty ? errors.value.length ? true : false : undefined

@@ -5,7 +5,7 @@
     import SelectField from '@/components/inputs/SelectField.vue'
     import { inputTypes } from '@/types'
 
-    // #Lifecycle
+    // #Props
     const { inputs } = defineProps({
         inputs: Object
     })

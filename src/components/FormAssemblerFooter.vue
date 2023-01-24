@@ -5,15 +5,12 @@
     import type { FormStep } from '@/types';
     import { computed, ref, type ComputedRef, type Ref } from 'vue';
 
-    // #Lifecycle
+    // #Props
     const { form } = defineProps({
         form: Object
     })
-
-    // Varia al variare dello stato di validazione dello step
-    const valid: Ref<boolean> = ref(false)
     
-    // RenderedStep
+    // #RenderedStep
     const rs: ComputedRef<FormStep> = computed(() => {
         // Se ogni input di questo step non ha errori permetti di proseguire
         const active = form?.steps?.find( (x: FormStep) => x?.stepid === activeStep.value.id )
@@ -21,18 +18,16 @@
         return active
     })
 
-    const logres = () => {
-        alert( JSON.stringify( getDescriptorValues() ) )
-    }
     
-    const nextStep = () => {
-        activeStep.value.id++
-    }
+    // Varia al variare dello stato di validazione dello step
+    const valid: Ref<boolean> = ref(false)
+        
+    // Crea un alert che contiene i value inseriti nel form
+    const logres = () => alert( JSON.stringify( getDescriptorValues() ) )
 
-    const prevStep = () => {
-        activeStep.value.id--
-    }
-
+    const nextStep = () => activeStep.value.id++ 
+    const prevStep = () => activeStep.value.id--
+        
 </script>
 
 <template>

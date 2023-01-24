@@ -16,11 +16,11 @@ export const config = {
 
 // Lista di tutte le validazioni possibili
 export const validators = {
-    REQ: (input: string | any[]) => !input.length ? config.errMsg.required : false ,
-    MXLEN: (input: string | any[]) => input.length > config.maxlen ? config.errMsg.maxLen : false ,
-    MNLEN: (input: string | any[]) => input.length < config.minlen ? config.errMsg.minLen : false ,
-    STRING: (input: string ) => !config.stringRe.test(input) ? config.errMsg.notString : false ,
-    MAIL: (input: string ) => !config.mailRe.test(input) ? config.errMsg.notEmail : false 
+    REQ: (input: string) => !input.length ? config.errMsg.required : false,
+    MXLEN: (input: string) => input.length > config.maxlen ? config.errMsg.maxLen : false,
+    MNLEN: (input: string) => input.length < config.minlen ? config.errMsg.minLen : false,
+    STRING: (input: string) => !config.stringRe.test(input) ? config.errMsg.notString : false,
+    MAIL: (input: string) => !config.mailRe.test(input) ? config.errMsg.notEmail : false 
 }
 
 /**

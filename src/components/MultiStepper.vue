@@ -2,24 +2,20 @@
     // #Components
     import FormAssembler from '@/components/FormAssembler.vue'
     import FormAssemblerFooter from '@/components/FormAssemblerFooter.vue'
-
     // #Framework
     import { computed, type ComputedRef } from 'vue';
     import { activeStep } from '@/store'
     import type { FormStep } from '@/types';
 
-    // #Lifecycle
+    // #Props
     const { form } = defineProps({
         form: Object
     })
 
-    // #Definizioni
+    // #ActiveForm - Aggiorna lo step del form in base all'id dello step attivo
     const af: ComputedRef<FormStep> = computed(() => {
         // Assegna alla vista corrente lo step associato a #activeStep
-        const { id } = activeStep.value
-        return form?.steps.find( 
-            (step: FormStep) => step.stepid === id
-        )
+        return form?.steps.find( (step: FormStep) => step.stepid === activeStep.value.id )
     })
 
 </script>
