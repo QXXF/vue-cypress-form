@@ -1,68 +1,25 @@
-# vue-second
+# Secondo esercizio in Vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Il progetto consiste una applicazione basata su un componente capace di leggere un oggetto descrittore e renderizzare gli step indicati, gestendo validazione e stato dei dati inseriti nel form. Raggiungendo l'ultimo step viene visualizzato un alert contenente tutti i dati inseriti durante la compilazione del form.
 
-## Recommended IDE Setup
+E' possibile ampliare il form aggiungendo e configurando step aggiuntivi.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Comandi
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+Il template di questo progetto è stato generato lanciando:
 
 ```sh
-npm install
+npm init vue@latest
 ```
 
-### Compile and Hot-Reload for Development
+### Per lanciare l'ambiente di sviluppo con hmr e cast su rete locale
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Per lanciare l'ambiente test con [Cypress](https://on.cypress.io)
 
 ```sh
-npm run build
-```
-
-### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
-
-```sh
-npm run test:unit:dev # or `npm run test:unit` for headless testing
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+npm run test-e2e
 ```

@@ -44,7 +44,10 @@
 <style lang="scss" scoped>
 
     #multistepper {
-        width: 60vw
+        width: auto;
+        @media (min-width: 768px) {
+            width: 60vw;
+        }
     }
 
     #step-marker {
