@@ -25,7 +25,7 @@ const primoStep: FormStep = {
         {
             id: 3,
             label: "Email",
-            type: inputTypes.MAIL,
+            type: inputTypes.TEXT,
             placeholder: "Inserisci un indirizzo mail",
             model: null,
             val: mailValidations

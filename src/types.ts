@@ -26,6 +26,5 @@ export interface Input {
 
 export enum inputTypes {
     TEXT = 'text',
-    MAIL = 'mail',
     SELECT = 'select'
 }
