@@ -1,6 +1,19 @@
-import { checkInputValidity } from "./components/inputs/config"
 import { descriptor, activeStep } from "./store"
 import type { FormStep, Input } from "./types"
+
+/**
+ * Applica il set di validatori (presenti nel model dell'input) al value inserito
+ *
+ * @param value - Il valore inserito dall'utente nell'input
+ * @param validators - La lista di validatori
+ * @returns Ritorna una lista di errori possibili, oppure 
+ * un array vuoto nel caso l'input sia valido
+ */
+const checkInputValidity = (value: any, validators: any): any[] => {
+    return validators
+        .map( (validator: any) => validator(value) )
+        .filter( (x: any) => x !== false )
+}
 
 export const updateFormState = ( id: number, val: any[], value: any ): any[] => {
     // Recupera l'indice del FormStep tramite #activeStep id
