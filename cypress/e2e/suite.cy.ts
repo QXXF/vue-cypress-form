@@ -1,15 +1,27 @@
+// Describe(): Inizializza il contesto della suite di test
 describe('E2E Secondo esercizio', () => {
 
+  // Permette di eseguire una serie di istruzioni
+  // prima dell'esecuzione di ogni test
   beforeEach(() => {
     cy.viewport(1280, 900)
   })
+  // .viewport(): Permette di modificare la grandezza della finestra in cui
+  // viene eseguito il test. Utile per verificare regressioni sul responsive
 
+  // It(): Identifica il contesto dello scenario specifico
   it('Monta lo stepper', () => {
     cy.visit('/')
+    
     cy.get('#multistepper').should('be.visible')
     cy.get('#next.not-ready').should('be.visible')
   })
-  
+
+  // .visit(): Permette di navigare verso il percorso indicato 
+  // .get(): Permette di trovare un elemento nel DOM a partire dal selettore css indicato
+  // .should(): Permette di applicare una o piu verifiche all'oggetto a cui viene concatenato 
+
+
   it('Compila con successo i due step del form', () => {
     cy.visit('/')
 
@@ -45,6 +57,18 @@ describe('E2E Secondo esercizio', () => {
 
     })
   })
+
+  // .type(): Se concatenato alla get di un input, permette di scrivere al suo interno
+  // come se l'utente stesse usando la tastiera.
+
+  // .click(): Simula il click sull'elemento a cui è concatenato
+
+  // .on(): Permette di applicare un event listener globale all'istanza di test.
+  // In questo caso, al submit del form apro un alert e leggo il suo contenuto
+
+  // expect(node): Permette di prendere in analisi un elemento e applicare una catena di asserzioni anche complessa
+
+
 
   it('Compila con errori e correggi il form', () => {
     cy.visit('/')
