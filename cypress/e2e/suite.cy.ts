@@ -1,5 +1,5 @@
 // Describe(): Inizializza il contesto della suite di test
-describe('E2E Secondo esercizio', () => {
+describe('E2E Stepper vue', () => {
 
   // Permette di eseguire una serie di istruzioni
   // prima dell'esecuzione di ogni test
@@ -27,7 +27,7 @@ describe('E2E Secondo esercizio', () => {
 
     // Compilo il primo step
     cy.get('#Nome').type('Christian')
-    cy.get('#Cognome').type('Bale')
+    cy.get('#Cognome1').type('Bale')
     cy.get('#Email').type('cb@mymail.com')
 
     // Verifico che il btn per proseguire sia abilitato e lo clicco
