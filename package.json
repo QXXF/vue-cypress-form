@@ -7,7 +7,8 @@
     "build": "run-p type-check build-only",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.cypress-ct.json --composite false",
-    "test-e2e": "start-server-and-test 'vite dev --port 4173' :4173 'cypress open --e2e'"
+    "open-e2e": "start-server-and-test 'vite dev --port 4173' :4173 'cypress open --e2e'",
+    "run-e2e": "start-server-and-test 'vite dev --port 4173' :4173 'cypress run'"
   },
   "dependencies": {
     "@picocss/pico": "^1.5.6",
