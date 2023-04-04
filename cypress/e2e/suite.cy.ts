@@ -27,7 +27,7 @@ describe('E2E Stepper vue', () => {
 
     // Compilo il primo step
     cy.get('#Nome').type('Christian')
-    cy.get('#Cognome1').type('Bale')
+    cy.get('#Cognome').type('Bale')
     cy.get('#Email').type('cb@mymail.com')
 
     // Verifico che il btn per proseguire sia abilitato e lo clicco
