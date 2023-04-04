@@ -1,4 +1,4 @@
-# Secondo esercizio in Vue
+# Esercizio in Vue
 
 Il progetto consiste una applicazione basata su un componente capace di leggere un oggetto descrittore e renderizzare gli step indicati, gestendo validazione e stato dei dati inseriti nel form. Raggiungendo l'ultimo step viene visualizzato un alert contenente tutti i dati inseriti durante la compilazione del form.
 
